@@ -2,9 +2,10 @@ version: '3.6'
 
 services:
   frontend:
-    image: "<%= @config['images']['frontend'] %>"
+    build:
+      context: "../vendor/baseapp"              
     volumes:
-      - ../config/frontend/env.js:/home/node/public/env.js
+      - ../config/frontend.env.js:/usr/share/nginx/html/config/env.js
     labels:
       traefik.enable: true
       traefik.frontend.rule: "PathPrefix:/;Host:www.<%= @config['app']['domain'] %>"

@@ -15,7 +15,7 @@ services:
       --rpccorsdomain="*"
       --rpcvhosts="*"
     volumes:
-      - ../data/geth:/root/.ethereum/
+      - ../../rinkeby:/root/.ethereum/rinkeby
     expose:
       - "8545"
       - "30303"
